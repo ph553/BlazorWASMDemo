@@ -1,0 +1,33 @@
+﻿<RadzenChart>
+    <RadzenDonutSeries Data="@revenue" CategoryProperty="Quarter" ValueProperty="Revenue">
+        <ChildContent>
+            <RadzenSeriesDataLabels Visible="true" />
+        </ChildContent>
+    </RadzenDonutSeries>
+    <RadzenLegend Visible="false" />
+</RadzenChart>
+@code {
+    class DataItem
+    {
+        public string Quarter { get; set; }
+        public double Revenue { get; set; }
+    }
+
+DataItem[] revenue = new DataItem[] {
+    new DataItem
+    {
+        Quarter = "ULSD",
+        Revenue = 30000
+    },
+    new DataItem
+    {
+        Quarter = "Premium Gas",
+        Revenue = 40000
+    },
+    new DataItem
+    {
+        Quarter = "Regular Gas",
+        Revenue = 50000
+    },
+};
+}

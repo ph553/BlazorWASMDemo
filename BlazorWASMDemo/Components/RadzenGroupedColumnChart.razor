@@ -1,0 +1,157 @@
+﻿@using System.Globalization
+        <RadzenChart Style="height:100px; width:100%, padding: 0;">
+            <RadzenColumnSeries Data="@shipments2020" CategoryProperty="Month" Title="2020" ValueProperty="Shipments">
+            </RadzenColumnSeries>
+            <RadzenColumnSeries Data="@shipments2019" CategoryProperty="Month" Title="2019" ValueProperty="Shipments">
+            </RadzenColumnSeries>
+            <RadzenLegend Position="LegendPosition.Bottom" />
+            <RadzenValueAxis FormatString="{0:C}" Visible="false" />
+            <RadzenCategoryAxis FormatString="{0:C}" Visible="false" />
+
+            <RadzenColumnOptions Radius="0" Margin="1" />
+        </RadzenChart>
+@code {
+
+    class DataItem
+    {
+        public string Month { get; set; } = "";
+        public double Shipments { get; set; }
+    }
+
+    DataItem[] shipments2019 = new DataItem[] {
+        new DataItem
+        {
+            Month = "M1",
+            Shipments = 234000
+        },
+        new DataItem
+        {
+            Month = "M2",
+            Shipments = 284000
+        },
+        new DataItem
+        {
+            Month = "M3",
+            Shipments = 274000
+        },
+        new DataItem
+        {
+            Month = "M4",
+            Shipments = 294000
+        },
+        new DataItem
+        {
+            Month = "M5",
+            Shipments = 234000
+        },
+        new DataItem
+        {
+            Month = "M6",
+            Shipments = 284000
+        },
+        new DataItem
+        {
+            Month = "M7",
+            Shipments = 274000
+        },
+        new DataItem
+        {
+            Month = "M8",
+            Shipments = 294000
+        },
+        new DataItem
+        {
+            Month = "M9",
+            Shipments = 234000
+        },
+        new DataItem
+        {
+            Month = "M10",
+            Shipments = 284000
+        },
+        new DataItem
+        {
+            Month = "M11",
+            Shipments = 274000
+        },
+        new DataItem
+        {
+            Month = "M12",
+            Shipments = 294000
+        },
+        new DataItem
+        {
+            Month = "M13",
+            Shipments = 294000
+        },
+    };
+
+    DataItem[] shipments2020 = new DataItem[] {
+        new DataItem
+        {
+            Month = "M1",
+            Shipments = 254000
+        },
+        new DataItem
+        {
+            Month = "M2",
+            Shipments = 324000
+        },
+        new DataItem
+        {
+            Month = "M3",
+            Shipments = 354000
+        },
+        new DataItem
+        {
+            Month = "M4",
+            Shipments = 394000
+        },
+        new DataItem
+        {
+            Month = "M5",
+            Shipments = 254000
+        },
+        new DataItem
+        {
+            Month = "M6",
+            Shipments = 324000
+        },
+        new DataItem
+        {
+            Month = "M7",
+            Shipments = 354000
+        },
+        new DataItem
+        {
+            Month = "M8",
+            Shipments = 394000
+        },
+        new DataItem
+        {
+            Month = "M9",
+            Shipments = 254000
+        },
+        new DataItem
+        {
+            Month = "M10",
+            Shipments = 324000
+        },
+        new DataItem
+        {
+            Month = "M11",
+            Shipments = 354000
+        },
+        new DataItem
+        {
+            Month = "M12",
+            Shipments = 394000
+        },
+        new DataItem
+        {
+            Month = "M13",
+            Shipments = 394000
+        },
+
+    };
+}

@@ -1,0 +1,118 @@
+﻿<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Tank</th>
+            <th>Product</th>
+            <th>Inventory</th>
+            <th>Capacity</th>
+            <th>Gravity</th>
+            <th>PPG</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tank in tanks)
+        {
+            <tr>
+                <td><span class="box @tank.Color"></span></td>
+                <td>@tank.TankNumber</td>
+                <td>@tank.Product</td>
+                <td>@tank.Inventory</td>
+                <td>@tank.Capacity</td>
+                <td>@tank.Gravity</td>
+                <td>@tank.PPG</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private Tank[] tanks = {
+        new Tank {
+            Color = "red",
+            TankNumber = 10,
+            Product = "ULSD",
+            Inventory = "4,399",
+            Capacity = "25,079",
+            Gravity = "41.00",
+            PPG = "7.00",
+        },
+        new Tank {
+            Color = "green",
+            TankNumber = 11,
+            Product = "ULSD",
+            Inventory = "4,399",
+            Capacity = "25,079",
+            Gravity = "41.00",
+            PPG = "7.00",
+        },
+        new Tank {
+            Color = "yellow",
+            TankNumber = 12,
+            Product = "ULSD",
+            Inventory = "4,399",
+            Capacity = "25,079",
+            Gravity = "41.00",
+            PPG = "7.00",
+        },
+        new Tank {
+            Color = "green",
+            TankNumber = 13,
+            Product = "ULSD",
+            Inventory = "4,399",
+            Capacity = "25,079",
+            Gravity = "41.00",
+            PPG = "7.00",
+        },
+        new Tank {
+            Color = "red",
+            TankNumber = 14,
+            Product = "ULSD",
+            Inventory = "4,399",
+            Capacity = "25,079",
+            Gravity = "41.00",
+            PPG = "7.00",
+        },
+    };
+
+    public class Tank
+    {
+        public string Color { get; set; } = "";
+
+        public int TankNumber { get; set; }
+
+        public string Product { get; set; } = "";
+
+        public string Inventory { get; set; } = "";
+
+        public string Capacity { get; set; } = "";
+
+        public string Gravity { get; set; } = "";
+
+        public string PPG { get; set; } = "";
+
+
+    }
+}
+<style>
+.box {
+  float: right;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 15px;
+  clear: both;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+</style>
+

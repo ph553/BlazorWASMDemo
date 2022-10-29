@@ -1,0 +1,78 @@
+﻿<div class="row col-10 text-center">
+    <div class="accordion px-0" id="accordionExample">
+        <div class="accordion-item">
+            <div class="accordion-header" id="headingOne">
+                <h2>
+                    <button class="accordion-button bg-light pt-0" style="height:90px" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" @onclick="@(() => { IsVisible = !IsVisible; })">
+                        <span style="height:50px; color:black;">
+                            <span class="accordion-button-text-big">Filter Insights</span>
+                            <span class="accordion-button-text-small ps-5">Inventory values reflect estimated current liftable inventories. Closed orders reflect net values</span>
+                        </span>
+                    </button>
+            </h2>
+            </div>
+                
+            <div id="collapseOne" class="accordion-collapse collapse @(IsVisible ? "show" : "")" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row form-group">
+                            
+                        <div class="col-2 text-start">
+                            <label class="start-0" for="ddlField">FIELD</label>
+                            <select id ="ddlField" class="form-select" aria-label="Field">
+                                <option selected>Select Field</option>
+                                <option value="1">Price per gallon</option>
+                                <option value="2">Quantity</option>
+                                <option value="3">Quality</option>
+                            </select>
+                        </div>
+
+                        <div class="col-2 text-start">
+                            <label for="ddlField">OPERATOR</label>
+                            <select id="ddlOperator" class="form-select" aria-label="Field">
+                                <option selected>Select Operator</option>
+                                <option value="1">Equals</option>
+                                <option value="2">Greater than</option>
+                                <option value="3">Lower than</option>
+                            </select>
+                        </div>
+
+                        <div class="col-7 text-start">
+                            <label for="ddlField">VALUE (Multiple values can be added)</label>
+                            <select id="ddlValue" class="form-select" aria-label="Field">
+                                <option selected>Value</option>
+                                <option value="1">Equals</option>
+                                <option value="2">Greater than</option>
+                                <option value="3">Lower than</option>
+                            </select>
+                        </div>
+
+                        <div class="col-1 text-start" style="vertical-align:middle !important">
+                            <svg id="iconDelete" class="bi mt-4" width="32" height="32" fill="light">
+                                <use href="icons/bootstrap-icons.svg#trash3"></use>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        +Add Filter (Examples: Product = Regular Gasoline, Tank = 12)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected bool IsVisible { get; set; } = true;
+}
+
+<style>
+    .accordion-button-text-big {
+        font-size:18px;
+    }
+
+    .accordion-button-text-small {
+        font-size: 12px;
+        padding-left: 20px;
+    }
+</style>

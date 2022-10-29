@@ -1,0 +1,108 @@
+﻿<RadzenChart Style="height:200px; width:100%, padding: 0;">
+    <RadzenLineSeries Smooth="false" Data="@bbls2020" CategoryProperty="Date" Title="2022" ValueProperty="BBLS">
+        <RadzenSeriesDataLabels Visible="false" />
+    </RadzenLineSeries>
+    <RadzenCategoryAxis Padding="20" Formatter="@FormatAsMonth" />
+    <RadzenLegend Visible="false" />
+    <RadzenValueAxis Min="0" Step="10000" Formatter="@FormatToNumberWithKSuffix">
+        <RadzenGridLines Visible="true" />
+    </RadzenValueAxis>
+</RadzenChart>
+
+@code {
+
+    class DataItem
+    {
+        public string Date { get; set; }
+        public double BBLS { get; set; }
+    }
+
+    string FormatAsMonth(object value)
+    {
+        if (value != null)
+        {
+            return Convert.ToDateTime(value).ToString("MMM");
+        }
+
+        return string.Empty;
+    }
+
+    static string FormatToNumberWithKSuffix(object value)
+    {
+        int num = 0;
+        if (value != null)
+        {
+            num = Convert.ToInt32(value);
+        }
+        if (num >= 100000)
+            return FormatToNumberWithKSuffix(num / 1000) + "K";
+
+        if (num >= 10000)
+            return (num / 1000D).ToString("0.#") + "K";
+
+        return num.ToString("#,0");
+    }
+
+    DataItem[] bbls2020 = new DataItem[] {
+        new DataItem
+        {
+            Date = ("2022-01-01"),
+            BBLS = 28000
+        },
+        new DataItem
+        {
+            Date = ("2022-02-01"),
+            BBLS = 30000
+        },
+        new DataItem
+        {
+            Date = ("2022-03-01"),
+            BBLS = 6400
+        },
+        new DataItem
+        {
+            Date = ("2022-04-01"),
+            BBLS = 13000
+        },
+        new DataItem
+        {
+            Date = ("2022-05-01"),
+            BBLS = 12000
+        },
+        new DataItem
+        {
+            Date = ("2022-06-01"),
+            BBLS = 4000
+        },
+        new DataItem
+        {
+            Date = ("2022-07-01"),
+            BBLS = 4000
+        },
+        new DataItem
+        {
+            Date = ("2022-08-01"),
+            BBLS = 9000
+        },
+        new DataItem
+        {
+            Date = ("2022-09-01"),
+            BBLS = 16000
+        },
+        new DataItem
+        {
+            Date = ("2022-10-01"),
+            BBLS = 15000
+        },
+        new DataItem
+        {
+            Date = ("2022-11-01"),
+            BBLS = 19000
+        },
+        new DataItem
+        {
+            Date = ("2022-12-01"),
+            BBLS = 27000
+        }
+    };
+}
