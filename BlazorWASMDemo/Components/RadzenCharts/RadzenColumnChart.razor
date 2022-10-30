@@ -3,7 +3,9 @@
     <RadzenColumnSeries Data="@LiftableInventory" CategoryProperty="Category" Title="2022" ValueProperty="Value">
     </RadzenColumnSeries>
     <RadzenLegend Visible="false" />
-    <RadzenValueAxis Min="0" Step="@Step" Formatter="FormatToNumberWithKSuffix" />
+    <RadzenValueAxis Min="0" Step="@Step" Formatter="FormatToNumberWithKSuffix" >
+        <RadzenGridLines Visible="@IsValueGridVisible" />
+    </RadzenValueAxis>
     <RadzenCategoryAxis />
 
     <RadzenColumnOptions Radius="0" Margin="1" Width="@(Width != 0 ? Width : null)" />
@@ -12,6 +14,9 @@
 
     [Parameter]
     public RadzenChartData[] LiftableInventory { get; set; }
+
+    [Parameter]
+    public Boolean IsValueGridVisible { get; set; } = false;
 
     [Parameter]
     public int Step { get; set; }

@@ -1,0 +1,55 @@
+﻿
+<header>
+    <nav class="navbar sticky-top navbar-expand-md">
+      <div class="container-fluid">
+        <div class="headerBar">
+            <img class="text-left dearman_logo" src="icons/dearman_white.webp" />
+            <span class="lynxConsole">LYNX Console</span>
+        </div>
+        <div style="padding-left:200px;" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <div class="nav-link text-white" class-active="active" to="/" exact>
+                <span>Insights</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                <span>Submit Order</span>
+              </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                    <span>Order Status</span>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                    <span>Order Management</span>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+@code {
+
+}
+
+<style>
+    .headerBar {
+        z-index:2;
+        display: flex;
+    }
+
+    .lynxConsole {
+        color: white;
+        padding-top: 24px
+    }
+
+    .dearman_logo {
+        text-align: left;
+    }
+</style>

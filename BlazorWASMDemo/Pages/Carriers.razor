@@ -87,38 +87,51 @@
     </div>
 </div>
 
+<div class="row text-center pt-3 pe-0">
+    <div class="col px-0">
+        <div class="p-0">
+            <div class="pt-4 pb-2 px-0 d-flex justify-content-between align-items-center">
+                <h6>Shipments by carrier</h6>
+            </div>
+            <div class="ps-3 col-11">
+                <RadzenColumnChart LiftableInventory="columnChartData1" Step="10" Width="70" IsValueGridVisible="true" />
+            </div>
+        </div>
+    </div>
+</div>
+
 @code {
 
     RadzenChartData[] columnChartData1 = new RadzenChartData[] {
         new RadzenChartData
         {
-            Category = "10",
-            Value = 25400
+            Category = "Luxembourg",
+            Value = 51
         },
         new RadzenChartData
         {
-            Category = "11",
-            Value = 52400
+            Category = "Trareysa",
+            Value = 35
         },
         new RadzenChartData
         {
-            Category = "12",
-            Value = 15400
+            Category = "STN",
+            Value = 21
         },
         new RadzenChartData
         {
-            Category = "13",
-            Value = 39400
+            Category = "Coastal",
+            Value = 15
         },
         new RadzenChartData
         {
-            Category = "14",
-            Value = 65400
+            Category = "Marvic",
+            Value = 14
         },
         new RadzenChartData
         {
-            Category = "18",
-            Value = 42400
+            Category = "San Maria",
+            Value = 12
         },
 
     }.OrderByDescending(t => t.Value).ToArray();    

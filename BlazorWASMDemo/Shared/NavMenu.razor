@@ -1,31 +1,25 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorWASMDemo</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿@inherits LayoutComponentBase
+
+<div style="width: 150px;" class="customSidebar">
+    <a class="closebtn fs-5 pt-5"><!--!-->☰</a><!--!-->
+    <div class="pt-0">
+        <a href="#" class="fs-6">Terminals</a>
+        <a href="#" class="fs-6">Suppliers</a>
+        <a href="#" class="fs-6">Customer</a>
+        <a href="#" class="fs-6">Carriers</a>
+        <a href="#" class="fs-6">Products</a>
+        <a href="#" class="fs-6">Destinations</a>
+        <a href="#" class="fs-6">Contacts</a>
     </div>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
-</div>
+@*@code {
+    int width = 0;
+    string sidebarWidth => $"width: {width}px;";
+    string mainMargin => $"margin-left: {width}px;";
+    void OpenNav() => width = 150;
+    void CloseNav() => width = 0;
+}
 
 @code {
     private bool collapseNavMenu = true;
@@ -36,4 +30,76 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
-}
+}*@
+
+<style>
+    .navbar-light {
+        background-image: none !important;
+    }
+    /* The sidebar menu */
+    .customSidebar {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: absolute !important; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: rgb(244,245,246); /* Black*/
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 60px; /* Place content 60px from the top */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+    /* The customSidebar links */
+    .customSidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .customSidebar a:hover {
+                color: rgb(150,150,150);
+    }
+
+    /* Position and style the close button (top right corner) */
+    .customSidebar .closebtn {
+      top: 62px;
+      margin:0px !important;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* The button used to open the customSidebar */
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #f7f7f7;
+        color: rgb(100,100,100);
+        padding: 10px 15px;
+        border: none;
+        height: 56px;
+        border-right: 1px solid #d6d5d5;
+        border-bottom: 1px solid #d6d5d5;
+        z-index: 4;
+    }
+
+    .openbtn:hover {
+            color: rgb(150,150,150);
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left .5s; /* If you want a transition effect */
+      padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @@media screen and (max-height: 450px) {
+      .customSidebar {padding-top: 15px;}
+      .customSidebar a {font-size: 18px;}
+    }
+</style>
