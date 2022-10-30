@@ -1,5 +1,69 @@
-﻿<h3>RadzenColumnChart</h3>
+﻿@using System.Globalization
+<RadzenChart Style="height:280px; width:80%, padding: 0;">
+    <RadzenColumnSeries Data="@shipments2020" CategoryProperty="Tank" Title="2020" ValueProperty="Shipments">
+    </RadzenColumnSeries>
+    <RadzenLegend Visible="false" />
+    <RadzenValueAxis Step="10000" Formatter="FormatToNumberWithKSuffix" />
+    <RadzenCategoryAxis />
 
+    <RadzenColumnOptions Radius="0" Margin="1" />
+</RadzenChart>
 @code {
+
+    class DataItem
+    {
+        public string Tank { get; set; } = "";
+        public double Shipments { get; set; }
+    }
+
+    static string FormatToNumberWithKSuffix(object value)
+    {
+        int num = 0;
+        if (value != null)
+        {
+            num = Convert.ToInt32(value);
+        }
+        if (num >= 100000)
+            return FormatToNumberWithKSuffix(num / 1000) + "K";
+
+        if (num >= 10000)
+            return (num / 1000D).ToString("0.#") + "K";
+
+        return num.ToString("#,0");
+    }
+
+    DataItem[] shipments2020 = new DataItem[] {
+        new DataItem
+        {
+            Tank = "10",
+            Shipments = 25400
+        },
+        new DataItem
+        {
+            Tank = "11",
+            Shipments = 52400
+        },
+        new DataItem
+        {
+            Tank = "12",
+            Shipments = 15400
+        },
+        new DataItem
+        {
+            Tank = "13",
+            Shipments = 39400
+        },
+        new DataItem
+        {
+            Tank = "14",
+            Shipments = 65400
+        },
+        new DataItem
+        {
+            Tank = "18",
+            Shipments = 42400
+        },
+
+    }.OrderByDescending(t => t.Shipments).ToArray();
 
 }
