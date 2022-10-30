@@ -1,38 +1,57 @@
 ﻿
-<header>
-    <nav class="navbar sticky-top navbar-expand-md">
-      <div class="container-fluid">
-        <div class="headerBar">
-            <img class="text-left dearman_logo" src="icons/dearman_white.webp" />
-            <span class="lynxConsole">LYNX Console</span>
+<nav class="navbar sticky-top navbar-expand-md w-100">
+    <div class="container-fluid w-100">
+        <div class="row w-100">
+            <div class="headerBar col-4">
+                <img class="text-left dearman_logo" src="icons/dearman_white.webp" />
+                <span class="lynxConsole">LYNX Console</span>
+            </div>
+            <div id="headerMiddleLinks" class="col-4 collapse navbar-collapse">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/" exact>
+                            <span>Insights</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                            <span>Submit Order</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                            <span>Order Status</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                            <span>Order Management</span>
+                        </div>
+                    </li>
+                </ul>
         </div>
-        <div style="padding-left:200px;" class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <div class="nav-link text-white" class-active="active" to="/" exact>
-                <span>Insights</span>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div class="nav-link text-white" class-active="active" to="/orderline" exact>
-                <span>Submit Order</span>
-              </div>
-            </li>
-            <li class="nav-item">
-                <div class="nav-link text-white" class-active="active" to="/orderline" exact>
-                    <span>Order Status</span>
-                </div>
-            </li>
-            <li class="nav-item">
-                <div class="nav-link text-white" class-active="active" to="/orderline" exact>
-                    <span>Order Management</span>
-                </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+            <div id="headerMiddleLinks" class="col-4 collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/" exact>
+                            <span>&#xF18A;</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                            <span>Position Holder</span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link text-white" class-active="active" to="/orderline" exact>
+                            <span>Flint Hill</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </div>
+</nav>
 
 @code {
 
@@ -51,5 +70,17 @@
 
     .dearman_logo {
         text-align: left;
+    }
+
+    #headerMiddleLinks {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #headerMiddle {
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
