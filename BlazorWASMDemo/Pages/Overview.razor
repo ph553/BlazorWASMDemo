@@ -60,7 +60,7 @@
             </div>
             <div class="card-body p-0">
                 <div class="row justify-content-between">
-                    <RadzenGroupedColumnChart/>
+                    <RadzenGroupedColumnChart Shipments2022="groupedColumnChartData2" Shipments2021="groupedColumnChartData1"/>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
                 <li class="invis"></li>
                 <li class="invis"></li>
                 <li class="invis"></li>
-                <li class="noDot"><RadzenLineChart /></li>
+                <li class="noDot"><RadzenLineChart Bbls="lineChartData" /></li>
                 <li class="invis"></li>
             </ul>
         </div>
@@ -106,7 +106,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="invis"></li>
-                <li class="noDot"><RadzenPieChart /></li>
+                <li class="noDot"><RadzenPieChart Revenue="pieChartData" /></li>
             </ul>
         </div>
     </div>
@@ -132,7 +132,7 @@
                 <li class="invis"></li>
                 <li class="invis"></li>
                 <li class="invis"></li>
-                <li class="noDot"><RadzenLineChart /></li>
+                <li class="noDot"><RadzenLineChart Bbls="lineChartData" /></li>
                 <li class="invis"></li>
             </ul>
         </div>
@@ -144,7 +144,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="invis"></li>
-                <li class="noDot"><RadzenColumnChart /></li>
+                <li class="noDot"><RadzenColumnChart LiftableInventory="columnChartData1" Step="10000" /></li>
                 <li class="invis"></li>
             </ul>
         </div>
@@ -159,7 +159,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="invis"></li>
-                <li class="noDot"><RadzenColumnChart /></li>
+                <li class="noDot"><RadzenColumnChart LiftableInventory="columnChartData2" Step="50000" /></li>
                 <li class="invis"></li>
             </ul>
         </div>
@@ -171,7 +171,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="invis"></li>
-                <li class="noDot"><RadzenColumnChart /></li>
+                <li class="noDot"><RadzenColumnChart LiftableInventory="columnChartData3" Step="20000" Width="35" /></li>
                 <li class="invis"></li>
             </ul>
         </div>
@@ -179,6 +179,336 @@
 </div>
 
 @code {
+
+    RadzenChartData[] groupedColumnChartData1 = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "M1",
+            Value = 234000
+        },
+        new RadzenChartData
+        {
+            Category = "M2",
+            Value = 284000
+        },
+        new RadzenChartData
+        {
+            Category = "M3",
+            Value = 274000
+        },
+        new RadzenChartData
+        {
+            Category = "M4",
+            Value = 294000
+        },
+        new RadzenChartData
+        {
+            Category = "M5",
+            Value = 234000
+        },
+        new RadzenChartData
+        {
+            Category = "M6",
+            Value = 284000
+        },
+        new RadzenChartData
+        {
+            Category = "M7",
+            Value = 274000
+        },
+        new RadzenChartData
+        {
+            Category = "M8",
+            Value = 294000
+        },
+        new RadzenChartData
+        {
+            Category = "M9",
+            Value = 234000
+        },
+        new RadzenChartData
+        {
+            Category = "M10",
+            Value = 284000
+        },
+        new RadzenChartData
+        {
+            Category = "M11",
+            Value = 274000
+        },
+        new RadzenChartData
+        {
+            Category = "M12",
+            Value = 294000
+        },
+        new RadzenChartData
+        {
+            Category = "M13",
+            Value = 294000
+        },
+    };
+
+    RadzenChartData[] groupedColumnChartData2 = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "M1",
+            Value = 254000
+        },
+        new RadzenChartData
+        {
+            Category = "M2",
+            Value = 324000
+        },
+        new RadzenChartData
+        {
+            Category = "M3",
+            Value = 354000
+        },
+        new RadzenChartData
+        {
+            Category = "M4",
+            Value = 394000
+        },
+        new RadzenChartData
+        {
+            Category = "M5",
+            Value = 254000
+        },
+        new RadzenChartData
+        {
+            Category = "M6",
+            Value = 324000
+        },
+        new RadzenChartData
+        {
+            Category = "M7",
+            Value = 354000
+        },
+        new RadzenChartData
+        {
+            Category = "M8",
+            Value = 394000
+        },
+        new RadzenChartData
+        {
+            Category = "M9",
+            Value = 254000
+        },
+        new RadzenChartData
+        {
+            Category = "M10",
+            Value = 324000
+        },
+        new RadzenChartData
+        {
+            Category = "M11",
+            Value = 354000
+        },
+        new RadzenChartData
+        {
+            Category = "M12",
+            Value = 394000
+        },
+        new RadzenChartData
+        {
+            Category = "M13",
+            Value = 394000
+        },
+
+    };
+
+    RadzenChartData[] columnChartData1 = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "10",
+            Value = 25400
+        },
+        new RadzenChartData
+        {
+            Category = "11",
+            Value = 52400
+        },
+        new RadzenChartData
+        {
+            Category = "12",
+            Value = 15400
+        },
+        new RadzenChartData
+        {
+            Category = "13",
+            Value = 39400
+        },
+        new RadzenChartData
+        {
+            Category = "14",
+            Value = 65400
+        },
+        new RadzenChartData
+        {
+            Category = "18",
+            Value = 42400
+        },
+
+    }.OrderByDescending(t => t.Value).ToArray();
+
+    RadzenChartData[] columnChartData2 = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "FHR 87NL",
+            Value = 165000
+        },
+        new RadzenChartData
+        {
+            Category = "FHR DSL",
+            Value = 45000
+        },
+        new RadzenChartData
+        {
+            Category = "FHR 91NL",
+            Value = 3000
+        },
+
+    }.OrderByDescending(t => t.Value).ToArray();
+
+    RadzenChartData[] columnChartData3 = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "SERV Energy, LLC",
+            Value = 63400
+        },
+        new RadzenChartData
+        {
+            Category = "Robco fuels, LLC",
+            Value = 48400
+        },
+        new RadzenChartData
+        {
+            Category = "Oleumv LLC",
+            Value = 47400
+        },
+        new RadzenChartData
+        {
+            Category = "Xemoll LLc",
+            Value = 16400
+        },
+        new RadzenChartData
+        {
+            Category = "Hevi Logistics, LLC",
+            Value = 10400
+        },
+        new RadzenChartData
+        {
+            Category = "TCI Control USA, LLC",
+            Value = 6400
+        },
+        new RadzenChartData
+        {
+            Category = "Musket Corporation",
+            Value = 5400
+        },
+        new RadzenChartData
+        {
+            Category = "Grupo Retrotamps",
+            Value = 4400
+        },
+        new RadzenChartData
+        {
+            Category = "WILLY'S FUELS",
+            Value = 2400
+        },
+        new RadzenChartData
+        {
+            Category = "Key Performance Petroleum",
+            Value = 1400
+        },
+        new RadzenChartData
+        {
+            Category = "Tartan OII LLC",
+            Value = 700
+        },
+
+    }.OrderByDescending(t => t.Value).ToArray();
+
+    RadzenChartData[] pieChartData = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = "ULSD",
+            Value = 30000
+        },
+        new RadzenChartData
+        {
+            Category = "Premium Gas",
+            Value = 40000
+        },
+        new RadzenChartData
+        {
+            Category = "Regular Gas",
+            Value = 50000
+        },
+    };
+
+    RadzenChartData[] lineChartData = new RadzenChartData[] {
+        new RadzenChartData
+        {
+            Category = ("2022-01-01"),
+            Value = 28000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-02-01"),
+            Value = 30000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-03-01"),
+            Value = 6400
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-04-01"),
+            Value = 13000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-05-01"),
+            Value = 12000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-06-01"),
+            Value = 4000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-07-01"),
+            Value = 4000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-08-01"),
+            Value = 9000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-09-01"),
+            Value = 16000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-10-01"),
+            Value = 15000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-11-01"),
+            Value = 19000
+        },
+        new RadzenChartData
+        {
+            Category = ("2022-12-01"),
+            Value = 27000
+        }
+    };
 
 }
 <style>
