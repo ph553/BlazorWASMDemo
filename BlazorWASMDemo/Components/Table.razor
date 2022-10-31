@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var tank in tanks)
+        @foreach (var tank in Tanks)
         {
             <tr>
                 <td><span class="box @tank.Color"></span></td>
@@ -27,72 +27,8 @@
 </table>
 
 @code {
-    private Tank[] tanks = {
-        new Tank {
-            Color = "red",
-            TankNumber = 10,
-            Product = "ULSD",
-            Inventory = "4,399",
-            Capacity = "25,079",
-            Gravity = "41.00",
-            PPG = "7.00",
-        },
-        new Tank {
-            Color = "green",
-            TankNumber = 11,
-            Product = "ULSD",
-            Inventory = "4,399",
-            Capacity = "25,079",
-            Gravity = "41.00",
-            PPG = "7.00",
-        },
-        new Tank {
-            Color = "yellow",
-            TankNumber = 12,
-            Product = "ULSD",
-            Inventory = "4,399",
-            Capacity = "25,079",
-            Gravity = "41.00",
-            PPG = "7.00",
-        },
-        new Tank {
-            Color = "green",
-            TankNumber = 13,
-            Product = "ULSD",
-            Inventory = "4,399",
-            Capacity = "25,079",
-            Gravity = "41.00",
-            PPG = "7.00",
-        },
-        new Tank {
-            Color = "red",
-            TankNumber = 14,
-            Product = "ULSD",
-            Inventory = "4,399",
-            Capacity = "25,079",
-            Gravity = "41.00",
-            PPG = "7.00",
-        },
-    };
-
-    public class Tank
-    {
-        public string Color { get; set; } = "";
-
-        public int TankNumber { get; set; }
-
-        public string Product { get; set; } = "";
-
-        public string Inventory { get; set; } = "";
-
-        public string Capacity { get; set; } = "";
-
-        public string Gravity { get; set; } = "";
-
-        public string PPG { get; set; } = "";
-
-
-    }
+    [Parameter]
+    public Tank[] Tanks { get; set; } = default!;
 }
 <style>
 .box {
