@@ -5,11 +5,14 @@
 
 
 @code {
+    //Used to detect if parent is active page
   [CascadingParameter]
   private TabControl Parent { get; set; }
 
   [Parameter]
   public RenderFragment ChildContent { get; set; }
+
+  //Tab text
   [Parameter]
   public string Text { get; set; }
 
@@ -18,6 +21,7 @@
   {
     if (Parent == null)
       throw new ArgumentNullException(nameof(Parent), "TabPage must exist within a TabControl");
+      //assign page to parent
     Parent.AddPage(this);
     base.OnInitialized();
   }

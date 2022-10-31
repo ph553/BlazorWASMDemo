@@ -19,10 +19,11 @@
 </div>
 
 @code {
+    // Render fragment contains the content inside the rendered subpage
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
+    public RenderFragment ChildContent { get; set; } = default!;
 
-    public TabPage ActivePage { get; set; }
+    public TabPage ActivePage { get; set; } = default!;
     List<TabPage> Pages = new List<TabPage>();
 
     internal void AddPage(TabPage tabPage)
