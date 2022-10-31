@@ -1,10 +1,10 @@
 ﻿<RadzenChart>
     <RadzenDonutSeries Data="@Revenue" CategoryProperty="Category" ValueProperty="Value">
         <ChildContent>
-            <RadzenSeriesDataLabels Visible="true" />
+            <RadzenSeriesDataLabels Visible="false" />
         </ChildContent>
     </RadzenDonutSeries>
-    <RadzenLegend Visible="false" />
+    <RadzenLegend Visible="true" />
 </RadzenChart>
 @code {
     [Parameter]
