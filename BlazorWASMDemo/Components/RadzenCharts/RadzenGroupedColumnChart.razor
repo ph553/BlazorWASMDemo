@@ -1,8 +1,10 @@
 ﻿@using System.Globalization
         <RadzenChart Style="height:100px; width:100%, padding: 0;">
-            <RadzenColumnSeries Data="@Shipments2022" CategoryProperty="Category" Title="2020" ValueProperty="Value">
+            <RadzenColumnSeries Data="@Shipments2021" CategoryProperty="Category" Title="2020" ValueProperty="Value">
             </RadzenColumnSeries>
-    <RadzenColumnSeries Data="@Shipments2021" CategoryProperty="Category" Title="2019" ValueProperty="Value">
+            <RadzenColumnSeries Data="@Shipments2021" CategoryProperty="Category" Title="2019" ValueProperty="Value">
+            </RadzenColumnSeries>
+            <RadzenColumnSeries Data="@Shipments2021" Fill="white" CategoryProperty="Category" Title="2019" ValueProperty="Value">
             </RadzenColumnSeries>
             <RadzenLegend Position="LegendPosition.Bottom" />
             <RadzenValueAxis FormatString="{0:C}" Visible="false" />
